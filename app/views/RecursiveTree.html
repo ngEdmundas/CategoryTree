@@ -1,6 +1,5 @@
 <div ng-controller="TreeController"
-     class="tree"
-     ng-init="tree = recursiveTree.getTreeRecur()">
+     class="tree">
     <div class="branch recursive-branch" ng-repeat="branch in recursiveTree.getTreeRecur()">
       <div style="margin-left: {{getMargin(branch)}}">
         -

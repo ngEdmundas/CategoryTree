@@ -14,13 +14,17 @@ CategoryTreeApp.controller('TreeController',
         return branch.level + 'em';
       };
 
+      $scope.rebuildFlat = function () {
+        $scope.recursiveTree.rebuildFlat();
+        $scope.iteratedTree.rebuildFlat();
+      };
+
       $scope.editBranch = function (branch) {
         $scope.currentBranch = branch;
         $scope.branchDup = angular.copy(branch);
         var m = $modal.open({
           templateUrl: 'views/modal/EditBranch.html',
           controller: 'ModalController',
-//          controller: CategoryTreeApp.controller('ModalController'),
           resolve: {
             parent: function () {
               return null;
@@ -35,13 +39,11 @@ CategoryTreeApp.controller('TreeController',
           console.log('m.result branchName=', branchName);
           $scope.currentBranch.branch.name = branchName;
 
-          $scope.recursiveTree.rebuildFlat();
-          $scope.iteratedTree.rebuildFlat();
+          $scope.rebuildFlat();
         }, function () {
           console.log('Modal dismissed');
         });
-        $scope.recursiveTree.rebuildFlat();
-        $scope.iteratedTree.rebuildFlat();
+        $scope.rebuildFlat();
       };
 
       $scope.deleteBranch = function (branch) {
@@ -60,8 +62,7 @@ CategoryTreeApp.controller('TreeController',
           b.parent.lastChild = b.prevBranch;
         }
         branch.deleted = true;
-        $scope.recursiveTree.rebuildFlat();
-        $scope.iteratedTree.rebuildFlat();
+        $scope.rebuildFlat();
       };
 
       $scope.addBranch = function (branch) {
@@ -94,15 +95,12 @@ CategoryTreeApp.controller('TreeController',
             p.lastChild = b;
             p.firstChild = b;
           }
-          $scope.recursiveTree.rebuildFlat();
-          $scope.iteratedTree.rebuildFlat();
-//          $scope.$root.$apply();
+          $scope.rebuildFlat();
           console.log('addBranch parent=', p);
         }, function () {
           console.log('Modal dismissed');
         });
       }
-      $scope.recursiveTree.rebuildFlat();
-      $scope.iteratedTree.rebuildFlat();
+      $scope.rebuildFlat();
     }
   ]);
