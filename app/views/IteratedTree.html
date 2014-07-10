@@ -1,0 +1,13 @@
+<div ng-controller="TreeController"
+     class="tree"
+     ng-init="tree = iteratedTree.getTreeIter()">
+    <div class="branch iterated-branch" ng-repeat="branch in tree">
+        <div style="margin-left: {{getMargin(branch)}}">
+            -
+          <button ng-click="editBranch(branch)">{{branch.name}}</button>
+          <button ng-click="iteratedTree.addBranch(branch)">+</button>
+          <button ng-if="branch.branch.parent && !branch.branch.firstChild"
+                  ng-click="iteratedTree.deleteBranch(branch)">x</button>
+        </div>
+    </div>
+</div>

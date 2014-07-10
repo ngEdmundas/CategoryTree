@@ -1,0 +1,45 @@
+<div ng-controller="ModalController">
+    <div class="modal-header">
+        <button class="close"
+                ng-click="dismiss('cancel')"
+                data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Edit branch</h3>
+    </div>
+    <div class="modal-body">
+        <div class="model-editor-form">
+            <fieldset class="model-editor-fields container">
+                <div class="row">
+                    <div class="control-group col-xs-12"
+                         ng-class="{error: nameError}">
+                        <label class="control-label"
+                               for="branch-name">
+                            <span>Branch name</span>
+                        </label>
+                        <div class="controls">
+                            <input type="text"
+                                   id="branch-name"
+                                   class="input-lg form-control"
+                                   placeholder="Branch name"
+                                   ng-model="branchName" />
+                            <p class="help-block"
+                               ng-show="branchName == ''">Please specify the branch name</p>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default"
+                ng-click="dismiss('cancel')">
+            Cancel
+        </button>
+        <button type="submit"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                ng-click="saveBranch()"
+                ng-disabled="!branchName || branchName.trim() == ''">
+            <span>Save</span>
+        </button>
+    </div>
+</div>

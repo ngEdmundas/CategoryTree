@@ -1,0 +1,31 @@
+<div id="modalDel"
+     class="modal fade"
+     data-backdrop="static"
+     tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close"
+                        data-dismiss="modal"
+                        ng-click="leaveBranch()">&times;</button>
+                <h3 class="modal-title">Delete a branch</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Branch will be permanently deleted and cannot be recovered.</h4>
+                <div>
+                    Name:
+                    <strong>"{{modal.branch.name}}"</strong>
+                </div>
+                <h4>Are you sure?</h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger"
+                        data-dismiss="modal"
+                        ng-click="deleteBranch()">Delete</button>
+                <button class="btn btn-success"
+                        data-dismiss="modal"
+                        ng-click="leaveBranch()">Leave</button>
+            </div>
+        </div>
+    </div>
+</div>

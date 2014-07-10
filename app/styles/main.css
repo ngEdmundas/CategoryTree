@@ -1,0 +1,15 @@
+body {
+  margin: 10px;
+}
+.tree {
+  margin-top: 50px;
+}
+.branch {
+  margin-top: 10px;
+}
+.iterated-branch button {
+  background-color: lightgreen;
+}
+.recursive-branch button {
+  background-color: lightblue;
+}

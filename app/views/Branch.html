@@ -1,0 +1,13 @@
+<div class="branch" ng-repeat="branch in tree">
+  <div style="margin-left: {{getMargin(branch)}}"
+    - {{branch.name}}
+    <button class="btn btn-sm btn-danger"
+            ng-click="treeData.deleteBranch(branch)">
+        x
+    </button>
+  </div>
+  <div ng-if="treeData.testLast(branch)"
+       ng-click="treeData.addBranch(branch)">
+    +
+  </div>
+</div>
