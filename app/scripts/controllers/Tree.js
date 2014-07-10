@@ -22,6 +22,9 @@ CategoryTreeApp.controller('TreeController',
           controller: 'ModalController',
 //          controller: CategoryTreeApp.controller('ModalController'),
           resolve: {
+            parent: function () {
+              return null;
+            },
             branch: function () {
               console.log('resolve');
               return $scope.branchDup;
@@ -30,10 +33,15 @@ CategoryTreeApp.controller('TreeController',
         });
         m.result.then(function (branchName) {
           console.log('m.result branchName=', branchName);
-          $scope.currentBranch.name = branchName;
+          $scope.currentBranch.branch.name = branchName;
+
+          $scope.recursiveTree.rebuildFlat();
+          $scope.iteratedTree.rebuildFlat();
         }, function () {
           console.log('Modal dismissed');
         });
+        $scope.recursiveTree.rebuildFlat();
+        $scope.iteratedTree.rebuildFlat();
       };
 
       $scope.deleteBranch = function (branch) {
@@ -52,6 +60,8 @@ CategoryTreeApp.controller('TreeController',
           b.parent.lastChild = b.prevBranch;
         }
         branch.deleted = true;
+        $scope.recursiveTree.rebuildFlat();
+        $scope.iteratedTree.rebuildFlat();
       };
 
       $scope.addBranch = function (branch) {
@@ -84,11 +94,15 @@ CategoryTreeApp.controller('TreeController',
             p.lastChild = b;
             p.firstChild = b;
           }
+          $scope.recursiveTree.rebuildFlat();
+          $scope.iteratedTree.rebuildFlat();
 //          $scope.$root.$apply();
           console.log('addBranch parent=', p);
         }, function () {
           console.log('Modal dismissed');
         });
       }
+      $scope.recursiveTree.rebuildFlat();
+      $scope.iteratedTree.rebuildFlat();
     }
   ]);

@@ -7,6 +7,7 @@ CategoryTreeApp.factory('RecursiveTree',
 
       var tree = {
         rootBranch: null,
+        flatRecur: [],
 
         init: function () {
           tree.rootBranch = new Branch('Recursive tree');
@@ -17,10 +18,14 @@ CategoryTreeApp.factory('RecursiveTree',
         },
 
         getTreeRecur: function () {
-          var flatRecur = [];
-          tree.addBranchRecur(flatRecur, 0, tree.getRoot());
+          return tree.flatRecur;
+        },
 
-          return flatRecur;
+        rebuildFlat: function () {
+          tree.flatRecur.splice(0, tree.flatRecur.length);
+          tree.addBranchRecur(tree.flatRecur, 0, tree.getRoot());
+
+          return tree.flatRecur;
         },
 
         addBranchRecur: function (flat, level, branch) {
