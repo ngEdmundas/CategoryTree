@@ -1,13 +1,13 @@
 <div ng-controller="TreeController"
      class="tree"
      ng-init="tree = recursiveTree.getTreeRecur()">
-    <div class="branch recursive-branch" ng-repeat="branch in tree">
+    <div class="branch recursive-branch" ng-repeat="branch in recursiveTree.getTreeRecur()">
       <div style="margin-left: {{getMargin(branch)}}">
         -
-        <button ng-click="recursiveTree.showBranch(branch)">{{branch.name}}</button>
-        <button ng-click="recursiveTree.addBranch(branch)">+</button>
+        <button ng-click="showBranch(branch)">{{branch.name}}</button>
+        <button ng-click="addBranch(branch)">+</button>
         <button ng-if="branch.branch.parent && !branch.branch.firstChild"
-                ng-click="recursiveTree.deleteBranch(branch)">x</button>
+                ng-click="deleteBranch(branch)">x</button>
       </div>
     </div>
 </div>
