@@ -7,6 +7,7 @@ CategoryTreeApp.factory('IteratedTree',
 
       var tree = {
         rootBranch: null,
+        flat: [],
 
         init: function () {
           tree.rootBranch = new Branch('Iterated tree');
@@ -17,12 +18,17 @@ CategoryTreeApp.factory('IteratedTree',
         },
 
         getTreeIter: function () {
-          var flat = [];
+          return tree.flat;
+        },
+
+        rebuildFlat: function () {
+          tree.flat.splice(0, tree.flat.length);
+
           var head = tree.getRoot();
           var level = 0;
           while (head) {
             console.log('line', head);
-            flat.push({level: level, name: head.name, branch: head});
+            tree.flat.push({level: level, name: head.name, branch: head});
             if (head.firstChild) {
               level++;
               head = head.firstChild;
@@ -40,7 +46,7 @@ CategoryTreeApp.factory('IteratedTree',
             }
           }
 
-          return flat;
+          return tree.flat;
         },
 
         showBranch: function (branch) {
