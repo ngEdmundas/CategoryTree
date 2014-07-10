@@ -1,0 +1,160 @@
+/* http://tympanus.net/codrops/2012/11/14/creative-css-loading-animations/ */
+.spinner {
+    /* Size and position */
+    font-size: 100px; /* 1em */
+    width: 1em;
+    height: 1em;
+    margin: 100px auto;
+    position: relative;
+
+    /* Styles */
+    list-style: none;
+    border-radius: 50%;
+    border: .01em solid rgba(150,150,150,0.1); /* Subtle white line circling the dots */
+}
+.spinner li {
+    width: .2em;
+    height: .2em;
+    position: absolute;
+    border-radius: 50%;
+}
+.spinner li:nth-child(1) {
+    background: #2980b9; /* Blue */
+    top: 0;
+    left: 50%;
+    margin-left: -.1em; /* Width/2 */
+    -webkit-transform-origin: 50% 250%;
+    -moz-transform-origin: 50% 250%;
+    -o-transform-origin: 50% 250%;
+    transform-origin: 50% 250%;
+    -webkit-animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
+    -moz-animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
+    -o-animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
+    animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
+}
+
+.spinner li:nth-child(2) {
+    background: #c0392b; /* Red */
+    top: 50%;
+    right: 0;
+    margin-top: -.1em; /* Height/2 */
+    -webkit-transform-origin: -150% 50%;
+    -moz-transform-origin: -150% 50%;
+    -o-transform-origin: -150% 50%;
+    transform-origin: -150% 50%;
+    -webkit-animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
+    -moz-animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
+    -o-animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
+    animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
+}
+
+.spinner li:nth-child(3) {
+    background: #f39c12; /* Yellow */
+    bottom: 0;
+    left: 50%;
+    margin-left: -.1em; /* Width/2 */
+    -webkit-transform-origin: 50% -150%;
+    -moz-transform-origin: 50% -150%;
+    -o-transform-origin: 50% -150%;
+    transform-origin: 50% -150%;
+    -webkit-animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
+    -moz-animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
+    -o-animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
+    animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
+}
+
+.spinner li:nth-child(4) {
+    background: #27ae60; /* Green */
+    top: 50%;
+    left: 0;
+    margin-top: -.1em; /* Height/2 */
+    -webkit-transform-origin: 250% 50%;
+    -moz-transform-origin: 250% 50%;
+    -o-transform-origin: 250% 50%;
+    transform-origin: 250% 50%;
+    -webkit-animation: rota 1.72s linear infinite, opa 5.25s ease-in-out infinite alternate;
+    -moz-animation: rota 1.72s linear infinite, opa 5.25s ease-in-out infinite alternate;
+    -o-animation: rota 1.72s linear infinite, opa 5.25s ease-in-out infinite alternate;
+    animation: rota 1.72s linear infinite, opa 5.25s ease-in-out infinite alternate;
+}
+@-webkit-keyframes rota {
+    from { -webkit-transform: rotate(0deg);   }
+    50%  { -webkit-transform: rotate(180deg); }
+    to   { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rota {
+    from { -moz-transform: rotate(0deg);   }
+    50%  { -moz-transform: rotate(180deg); }
+    to   { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes rota {
+    from { -o-transform: rotate(0deg);   }
+    50%  { -o-transform: rotate(180deg); }
+    to   { -o-transform: rotate(360deg); }
+}
+@keyframes rota {
+    from { transform: rotate(0deg);   }
+    50%  { transform: rotate(180deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes opa {
+    from  { opacity: 1.00; }
+    12.0% { opacity: 0.80; }
+    19.5% { opacity: 0.88; }
+    37.2% { opacity: 0.64; }
+    40.5% { opacity: 0.52; }
+    52.7% { opacity: 0.69; }
+    60.2% { opacity: 0.60; }
+    66.6% { opacity: 0.52; }
+    70.0% { opacity: 0.63; }
+    79.9% { opacity: 0.60; }
+    84.2% { opacity: 0.75; }
+    91.0% { opacity: 0.87; }
+    to    { opacity: 1.00; }
+}
+@-moz-keyframes opa {
+    from  { opacity: 1.00; }
+    12.0% { opacity: 0.80; }
+    19.5% { opacity: 0.88; }
+    37.2% { opacity: 0.64; }
+    40.5% { opacity: 0.52; }
+    52.7% { opacity: 0.69; }
+    60.2% { opacity: 0.60; }
+    66.6% { opacity: 0.52; }
+    70.0% { opacity: 0.63; }
+    79.9% { opacity: 0.60; }
+    84.2% { opacity: 0.75; }
+    91.0% { opacity: 0.87; }
+    to    { opacity: 1.00; }
+}
+@-o-keyframes opa {
+    from  { opacity: 1.00; }
+    12.0% { opacity: 0.80; }
+    19.5% { opacity: 0.88; }
+    37.2% { opacity: 0.64; }
+    40.5% { opacity: 0.52; }
+    52.7% { opacity: 0.69; }
+    60.2% { opacity: 0.60; }
+    66.6% { opacity: 0.52; }
+    70.0% { opacity: 0.63; }
+    79.9% { opacity: 0.60; }
+    84.2% { opacity: 0.75; }
+    91.0% { opacity: 0.87; }
+    to    { opacity: 1.00; }
+}
+@keyframes opa {
+    from  { opacity: 1.00; }
+    12.0% { opacity: 0.80; }
+    19.5% { opacity: 0.88; }
+    37.2% { opacity: 0.64; }
+    40.5% { opacity: 0.52; }
+    52.7% { opacity: 0.69; }
+    60.2% { opacity: 0.60; }
+    66.6% { opacity: 0.52; }
+    70.0% { opacity: 0.63; }
+    79.9% { opacity: 0.60; }
+    84.2% { opacity: 0.75; }
+    91.0% { opacity: 0.87; }
+    to    { opacity: 1.00; }
+}
