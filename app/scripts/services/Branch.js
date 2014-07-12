@@ -16,8 +16,8 @@ CategoryTreeApp.factory('Branch',
 
       Branch.prototype.addChild = function (child) {
         child.parent = this;
-        child.prevBranch = this.lastChild;
         if (this.lastChild) {
+          child.prevBranch = this.lastChild;
           this.lastChild.nextBranch = child;
         }
         this.lastChild = child;
