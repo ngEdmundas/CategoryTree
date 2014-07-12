@@ -21,12 +21,12 @@ CategoryTreeApp.controller('ModalController',
       $scope.saveBranch = function () {
         console.log('saveBranch branch=', $scope.branch);
         $modalInstance.close($scope.branch.name);
-      },
+      };
 
-      $scope.addBranch = function (branch) {
+      $scope.addBranch = function () {
         $scope.parent = parent;
         console.log('addBranch parent=', $scope.parent);
         $modalInstance.close($scope.branch.name);
-      }
+      };
     }
   ]);

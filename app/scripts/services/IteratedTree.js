@@ -1,8 +1,8 @@
-'use strict';
-
 CategoryTreeApp.factory('IteratedTree',
   [          '$log', 'Branch',
     function ($log,   Branch) {
+      'use strict';
+
       $log.info('IteratedTree loaded');
 
       var tree = {
@@ -47,12 +47,7 @@ CategoryTreeApp.factory('IteratedTree',
           }
 
           return tree.flat;
-        },
-
-        showBranch: function (branch) {
-          confirm(branch.name);
         }
-
       };
 
       tree.init();

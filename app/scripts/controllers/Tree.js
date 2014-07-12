@@ -101,7 +101,7 @@ CategoryTreeApp.controller('TreeController',
         }, function () {
           console.log('Modal dismissed');
         });
-      }
+      };
       $scope.rebuildFlat();
     }
   ]);
