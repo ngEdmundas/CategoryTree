@@ -12,7 +12,7 @@ CategoryTreeApp.factory('Branch',
         this.firstChild = null;
         this.lastChild = null;
         this.parent = null;
-      }
+      };
 
       Branch.prototype.addChild = function (child) {
         child.parent = this;
