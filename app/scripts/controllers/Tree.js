@@ -49,18 +49,7 @@ CategoryTreeApp.controller('TreeController',
       $scope.deleteBranch = function (branch) {
         console.log('deleteBranch', branch);
         var b = branch.branch;
-        if (b.prevBranch) {
-          b.prevBranch.nextBranch = b.nextBranch;
-        }
-        if (b.nextBranch) {
-          b.nextBranch.prevBranch = b.prevBranch;
-        }
-        if (b.parent.firstChild === b) {
-          b.parent.firstChild = b.nextBranch;
-        }
-        if (b.parent.lastChild === b) {
-          b.parent.lastChild = b.prevBranch;
-        }
+        b.parent.removeChild(b);
         branch.deleted = true;
         $scope.rebuildFlat();
       };
@@ -85,17 +74,8 @@ CategoryTreeApp.controller('TreeController',
         m.result.then(function (branchName) {
           console.log('m.result branchName=', branchName);
           var b = new Branch(branchName);
-          var p = $scope.parent.branch;
-          b.parent = p;
-          if (p.lastChild) {
-            b.prevBranch = p.lastChild;
-            p.lastChild.nextBranch = b;
-            p.lastChild = b;
-          }
-          else {
-            p.lastChild = b;
-            p.firstChild = b;
-          }
+          var p = $scope.parent;
+          p.branch.addChild(b);
           $scope.rebuildFlat();
           console.log('addBranch parent=', p);
         }, function () {
