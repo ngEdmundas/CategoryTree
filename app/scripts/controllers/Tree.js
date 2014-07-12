@@ -88,6 +88,7 @@ CategoryTreeApp.controller('TreeController',
           var p = $scope.parent.branch;
           b.parent = p;
           if (p.lastChild) {
+            b.prevBranch = p.lastChild;
             p.lastChild.nextBranch = b;
             p.lastChild = b;
           }
