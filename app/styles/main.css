@@ -13,3 +13,11 @@ body {
 .recursive-branch button {
   background-color: lightblue;
 }
+.add-branch,
+.delete-branch {
+  border-radius: 50%;
+}
+div button.delete-branch {
+  background-color: red;
+  color: white;
+}
