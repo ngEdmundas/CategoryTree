@@ -3,7 +3,7 @@
     <div class="branch recursive-branch" ng-repeat="branch in recursiveTree.getTreeRecur()">
       <div style="margin-left: {{getMargin(branch)}}">
         -
-        <button ng-click="showBranch(branch)">{{branch.name}}</button>
+        <button ng-click="editBranch(branch)">{{branch.name}}</button>
         <button ng-click="addBranch(branch)">+</button>
         <button ng-if="branch.branch.parent && !branch.branch.firstChild"
                 ng-click="deleteBranch(branch)">x</button>
