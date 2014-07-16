@@ -1,10 +1,17 @@
-<div ng-include="'views/RecursiveTree.html'"></div>
+<material-content>
+<material-tabs selected="which" nobar nostretch zzz-class="special">
 
-<div ng-include="'views/IteratedTree.html'"></div>
+  <material-tab >
+    <material-tab-label>Recursive Tree</material-tab-label>
+    <div class="whiteArea"
+         ng-include="'views/RecursiveTree.html'"></div>
+  </material-tab>
 
-<!--paper-dialog id="show-branch"
-              heading="Show branch"
-              transition="paper-dialog-transition-bottom">
-    <p>Branch</p>
-    <paper-button label="OK" affirmative default></paper-button>
-</paper-dialog-->
+  <material-tab>
+    <material-tab-label>Iterated Tree</material-tab-label>
+    <div class="whiteArea"
+         ng-include="'views/IteratedTree.html'"></div>
+  </material-tab>
+
+</material-tabs>
+</material-content>

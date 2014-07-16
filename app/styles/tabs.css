@@ -1,0 +1,13 @@
+material-content material-tabs {
+  background-color: white;
+}
+.grayArea {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100%;
+}
+.whiteArea {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}

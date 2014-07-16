@@ -1,8 +1,27 @@
-<div>
+<material-dialog>
+  <div class="dialog-content">
+    <p>Add new branch</p>
+  </div>
+  <div class="material-input-group">
+    <label for="branch-name">Branch name</label>
+    <input id="branch-name" type="text" ng-model="branch.name">
+  </div>
+  <div class="dialog-actions">
+    <button class="material-button"
+            ng-click="cancel()">Cancel</button>
+    <button class="material-button"
+            style="float:right;"
+            ng-click="addBranch(branch.name)">Add</button>
+  </div>
+</material-dialog>
+
+
+
+<!--div>
     <div class="modal-header">
         <button class="close"
                 ng-click="dismiss('cancel')"
-                data-dismiss="modal">&times;</button>
+                data-dismiss="modal">& times;</button>
         <h3 class="modal-title">Add new branch</h3>
     </div>
     <div class="modal-body">
@@ -42,4 +61,4 @@
             <span>Save</span>
         </button>
     </div>
-</div>
+</div-->
