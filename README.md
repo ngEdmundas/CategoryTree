@@ -3,6 +3,10 @@ CategoryTree
 
 Recursive and iterative implementations of Category Tree SPA, uses AngularJS
 
+*User interface implemented by using WebComponents an Polymer from Google Material design Paper as provided by  angular-material*
+
+
+
 The exercise is printing a categories tree to the page (with unlimited hierarchy) in two different ways:
 
 ------------
